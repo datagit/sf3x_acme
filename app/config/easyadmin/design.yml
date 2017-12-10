@@ -1,0 +1,12 @@
+easy_admin:
+    design:
+        color_scheme: 'dark' #dark, light
+        #brand_color: '#3B5998'
+        form_theme:   ['VichUploaderBundle:Form:fields.html.twig', 'horizontal']
+        menu:
+            - { entity: 'Category', icon: 'tag' }
+            - { entity: 'Product', icon: 'recycle' }
+            - { entity: 'Tag', icon: 'tag' }
+            - { entity: 'Command', icon: 'gears' }
+            - { entity: 'User', label: 'User Account', icon: 'user' }
+        # ...

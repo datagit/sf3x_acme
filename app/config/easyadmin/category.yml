@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+        Category:
+            #disabled_actions: ['delete', 'edit', 'restock']
+            class: Mcc\DataSourceBundle\Entity\Category
+            list:
+                fields:
+                    ['id', 'name']
+            form:
+                fields:
+                    - { property: 'name' }
+                    #- { property: 'createdAt', type_options: { widget: 'single_text' } }
+                    - { property: 'createdAt' }
+                    - { property: 'updatedAt' }

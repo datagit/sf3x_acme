@@ -1,0 +1,28 @@
+mcc_frontend:
+    resource: "@MccFrontendBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+#mcc_backend:
+#    resource: "@MccBackendBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+mcc_data_source:
+    resource: "@MccDataSourceBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# EasyAdminBundle
+easy_admin_bundle:
+#    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    resource: "@MccBackendBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

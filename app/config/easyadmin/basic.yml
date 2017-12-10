@@ -1,0 +1,11 @@
+easy_admin:
+    #disabled_actions: ['delete', 'edit', 'new']
+    site_name: '<strong>ACME Inc.</strong>'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'Y-m-d H:i:s'
+        number: '%0.2f'
+    list:
+        max_results: 15
+    # ...

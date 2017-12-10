@@ -1,0 +1,4 @@
+services:
+#    mcc_data_source.example:
+#        class: Mcc\DataSourceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

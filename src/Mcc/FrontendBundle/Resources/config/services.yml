@@ -1,0 +1,4 @@
+services:
+#    mcc_frontend.example:
+#        class: Mcc\FrontendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
