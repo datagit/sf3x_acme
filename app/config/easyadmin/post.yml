@@ -1,31 +1,31 @@
 easy_admin:
     entities:
-        Product:
-            class: Mcc\DataSourceBundle\Entity\Product
+        Post:
+            class: Mcc\DataSourceBundle\Entity\Post
             form:
                 fields:
-                    - { property: 'code'}
                     - { property: 'name'}
-                    - { property: 'price', type: 'money', type_options: { currency: 'EUR' } }
+                    - { property: 'brief'}
                     - { property: 'description', type: 'ckeditor'}
+                    - { property: 'author'}
+                    - { property: 'position'}
                     - { property: 'enabled'}
                     - { property: 'imageFile', type: 'vich_file' }
-                    - { property: 'categories', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Category', attr: { data-widget: 'select2' } } }
-                    - { property: 'colors', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Color', attr: { data-widget: 'select2' } } }
-                    - { property: 'sizes', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Size', attr: { data-widget: 'select2' } } }
+                    - { property: 'tag', type: 'entity', type_options: { multiple: false, class: 'Mcc\DataSourceBundle\Entity\Tag', attr: { data-widget: 'select2' } } }
                     - { property: 'createdAt' }
                     - { property: 'updatedAt' }
 
             # ...
             list:
                 fields:
-                    - { property: 'code'}
-                    - { property: 'categories'}
                     - { property: 'name'}
                     - { property: 'slug'}
-                    - { property: 'price' }
-                    - { property: 'description'}
+                    - { property: 'author'}
+                    - { property: 'tag'}
+                    - { property: 'position' }
                     - { property: 'enabled'}
+                    - { property: 'createdAt'}
+                    - { property: 'updatedAt'}
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%', template: 'vich_uploader_image.html.twig' }
                     #- { property: 'image', type: 'vich_file', base_path: '%app.path.product_images%' }
                     #- { property: 'image', type: 'file', base_path: '%app.path.product_images%' }

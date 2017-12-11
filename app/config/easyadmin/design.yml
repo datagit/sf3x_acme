@@ -6,7 +6,9 @@ easy_admin:
         menu:
             - { entity: 'Category', icon: 'tag' }
             - { entity: 'Product', icon: 'recycle' }
+            - { entity: 'Color', icon: 'gears' }
+            - { entity: 'Size', icon: 'gears' }
             - { entity: 'Tag', icon: 'tag' }
-            - { entity: 'Command', icon: 'gears' }
+            - { entity: 'Post', icon: 'file' }
             - { entity: 'User', label: 'User Account', icon: 'user' }
         # ...

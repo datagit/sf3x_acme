@@ -2,16 +2,16 @@
 
 namespace Mcc\DataSourceBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Command
+ * Color
  *
- * @ORM\Table(name="command")
- * @ORM\Entity(repositoryClass="Mcc\DataSourceBundle\Repository\CommandRepository")
+ * @ORM\Table(name="color")
+ * @ORM\Entity(repositoryClass="Mcc\DataSourceBundle\Repository\ColorRepository")
  */
-class Command
+class Color
 {
     /**
      * @var int
@@ -25,9 +25,17 @@ class Command
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
+
+    /**
+     * @var int
+     *
+     * @Gedmo\SortablePosition
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
 
     /**
      * @var \DateTime
@@ -59,7 +67,7 @@ class Command
      *
      * @param string $name
      *
-     * @return Command
+     * @return Color
      */
     public function setName($name)
     {
@@ -79,11 +87,35 @@ class Command
     }
 
     /**
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Color
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
      * Set createdAt
      *
      * @param \DateTime $createdAt
      *
-     * @return Command
+     * @return Color
      */
     public function setCreatedAt($createdAt)
     {
@@ -107,7 +139,7 @@ class Command
      *
      * @param \DateTime $updatedAt
      *
-     * @return Command
+     * @return Color
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -126,43 +158,10 @@ class Command
         return $this->updatedAt;
     }
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Tag")
-     * @ORM\JoinTable(name="commands_tags",
-     *      joinColumns={@ORM\JoinColumn(name="command_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="id")}
-     *      )
-     */
-    private $tags;
-
-    /**
-     * @return Tag[]
-     */
-    public function getTags()
+    function __toString()
     {
-        return $this->tags;
-    }
-
-    /**
-     * @param Tag[] $tags
-     */
-    public function setTags(Tag $tags = null)
-    {
-        $this->tags = $tags;
-    }
-
-    /** {@inheritdoc} */
-    public function __toString()
-    {
+        // TODO: Implement __toString() method.
         return $this->name;
     }
-
-    /**
-     * Default constructor, initializes collections
-     */
-    public function __construct()
-    {
-        $this->tags = new ArrayCollection();
-    }
-
 }
+

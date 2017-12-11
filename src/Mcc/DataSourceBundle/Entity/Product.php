@@ -2,6 +2,7 @@
 
 namespace Mcc\DataSourceBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -19,9 +20,9 @@ class Product
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
 
@@ -33,6 +34,50 @@ class Product
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="string", length=255, nullable=true, unique=true)
+     */
+    private $code;
+
+
+    /**
+     * @ORM\ManyToMany(targetEntity="CouponCode")
+     * @ORM\JoinTable(name="coupon_code_product",
+     *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="coupon_code_id", referencedColumnName="id")}
+     *      )
+     */
+    private $couponCodes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Color")
+     * @ORM\JoinTable(name="color_product",
+     *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="color_id", referencedColumnName="id")}
+     *      )
+     */
+    private $colors;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Size")
+     * @ORM\JoinTable(name="size_product",
+     *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="size_id", referencedColumnName="id")}
+     *      )
+     */
+    private $sizes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Category")
+     * @ORM\JoinTable(name="category_product",
+     *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
+     *      )
+     */
+    private $categories;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="price", type="integer")
@@ -42,9 +87,15 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text", length=255)
      */
     private $description;
+
+    /**
+     * @Gedmo\SortablePosition
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
 
     /**
      * Indicate if the product is enabled (available in store).
@@ -80,8 +131,8 @@ class Product
     private $createdAt;
 
     /**
-     * @Gedmo\Slug(fields={"name", "price"}, updatable=true, separator="-")
-     * @ORM\Column(length=128, nullable=true, unique=true)
+     * @Gedmo\Slug(fields={"name", "code", "price"}, updatable=true, separator="-")
+     * @ORM\Column(type="string", length=128, nullable=true, unique=true)
      */
     private $slug;
 
@@ -167,27 +218,27 @@ class Product
         return $this->description;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    private $category;
-
-    /**
-     * @return mixed
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * @param Category $category
-     */
-    public function setCategory(Category $category = null)
-    {
-        $this->category = $category;
-    }
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+//     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+//     */
+//    private $category;
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getCategory()
+//    {
+//        return $this->category;
+//    }
+//
+//    /**
+//     * @param Category $category
+//     */
+//    public function setCategory(Category $category = null)
+//    {
+//        $this->category = $category;
+//    }
 
     /** {@inheritdoc} */
     public function __toString()
@@ -282,6 +333,113 @@ class Product
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * Default constructor, initializes collections
+     */
+    public function __construct()
+    {
+        $this->colors = new ArrayCollection();
+        $this->couponCodes = new ArrayCollection();
+        $this->sizes = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCouponCodes()
+    {
+        return $this->couponCodes;
+    }
+
+    /**
+     * @param mixed $couponCodes
+     */
+    public function setCouponCodes($couponCodes)
+    {
+        $this->couponCodes = $couponCodes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getColors()
+    {
+        return $this->colors;
+    }
+
+    /**
+     * @param mixed $colors
+     */
+    public function setColors($colors)
+    {
+        $this->colors = $colors;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSizes()
+    {
+        return $this->sizes;
+    }
+
+    /**
+     * @param mixed $sizes
+     */
+    public function setSizes($sizes)
+    {
+        $this->sizes = $sizes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param mixed $categories
+     */
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param mixed $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
     }
 
 

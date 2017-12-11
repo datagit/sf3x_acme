@@ -2,17 +2,16 @@
 
 namespace Mcc\DataSourceBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Tag
+ * Size
  *
- * @ORM\Table(name="tag")
- * @ORM\Entity(repositoryClass="Mcc\DataSourceBundle\Repository\TagRepository")
+ * @ORM\Table(name="size")
+ * @ORM\Entity(repositoryClass="Mcc\DataSourceBundle\Repository\SizeRepository")
  */
-class Tag
+class Size
 {
     /**
      * @var int
@@ -26,27 +25,31 @@ class Tag
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
 
     /**
-     * @Gedmo\SortablePosition
-     * @ORM\Column(name="position", type="integer", nullable=true)
+     * @var \DateTime
+     *
+     * @ORM\Column(name="createdAt", type="datetime", nullable=true)
      */
-    private $position;
+    private $createdAt;
 
     /**
-     * @Gedmo\Timestampable(on="update")
+     * @var \DateTime
+     *
      * @ORM\Column(name="updatedAt", type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="createdAt", type="datetime", nullable=true)
+     * @var int
+     *
+     * @Gedmo\SortablePosition
+     * @ORM\Column(name="position", type="integer", nullable=true)
      */
-    private $createdAt;
+    private $position;
 
 
     /**
@@ -64,7 +67,7 @@ class Tag
      *
      * @param string $name
      *
-     * @return Tag
+     * @return Size
      */
     public function setName($name)
     {
@@ -88,7 +91,7 @@ class Tag
      *
      * @param \DateTime $createdAt
      *
-     * @return Tag
+     * @return Size
      */
     public function setCreatedAt($createdAt)
     {
@@ -107,30 +110,24 @@ class Tag
         return $this->createdAt;
     }
 
-    /** {@inheritdoc} */
-    public function __toString()
-    {
-        return $this->name;
-    }
-
     /**
-     * @return mixed
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Size
      */
-    public function getPosition()
+    public function setUpdatedAt($updatedAt)
     {
-        return $this->position;
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 
     /**
-     * @param mixed $position
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * @return mixed
+     * Get updatedAt
+     *
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -138,41 +135,34 @@ class Tag
     }
 
     /**
-     * @param mixed $updatedAt
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Size
      */
-    public function setUpdatedAt($updatedAt)
+    public function setPosition($position)
     {
-        $this->updatedAt = $updatedAt;
+        $this->position = $position;
+
+        return $this;
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Post", mappedBy="tag")
+     * Get position
+     *
+     * @return int
      */
-    private $posts;
-
-    public function __construct()
+    public function getPosition()
     {
-        $this->posts = new ArrayCollection();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPosts()
-    {
-        return $this->posts;
-    }
-
-    /**
-     * @param mixed $posts
-     */
-    public function setPosts($posts)
-    {
-        $this->posts = $posts;
+        return $this->position;
     }
 
 
-
-
+    function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->name;
+    }
 }
 

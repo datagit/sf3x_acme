@@ -3,7 +3,8 @@
 namespace Mcc\DataSourceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+//use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Category
@@ -30,11 +31,19 @@ class Category
     private $name;
 
     /**
+     * @Gedmo\SortablePosition
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="updatedAt", type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="createdAt", type="datetime", nullable=true)
      */
     private $createdAt;
@@ -75,15 +84,15 @@ class Category
         return $this->name;
     }
 
-    /**
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
-     */
-    private $products;
-
-    public function __construct()
-    {
-        $this->products = new ArrayCollection();
-    }
+//    /**
+//     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+//     */
+//    private $products;
+//
+//    public function __construct()
+//    {
+//        //$this->products = new ArrayCollection();
+//    }
 
     /** {@inheritdoc} */
     public function __toString()
@@ -91,21 +100,21 @@ class Category
         return $this->name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getProducts()
-    {
-        return $this->products;
-    }
-
-    /**
-     * @param mixed $products
-     */
-    public function setProducts($products)
-    {
-        $this->products = $products;
-    }
+//    /**
+//     * @return mixed
+//     */
+//    public function getProducts()
+//    {
+//        return $this->products;
+//    }
+//
+//    /**
+//     * @param mixed $products
+//     */
+//    public function setProducts($products)
+//    {
+//        $this->products = $products;
+//    }
 
     /**
      * @return mixed
@@ -139,8 +148,21 @@ class Category
         $this->createdAt = $createdAt;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
 
-
+    /**
+     * @param mixed $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
 
 
 
