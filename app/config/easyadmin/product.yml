@@ -13,6 +13,7 @@ easy_admin:
                     - { property: 'categories', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Category', attr: { data-widget: 'select2' } } }
                     - { property: 'colors', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Color', attr: { data-widget: 'select2' } } }
                     - { property: 'sizes', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Size', attr: { data-widget: 'select2' } } }
+                    - { property: 'couponCodes', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\CouponCode', attr: { data-widget: 'select2' } } }
                     - { property: 'createdAt' }
                     - { property: 'updatedAt' }
 

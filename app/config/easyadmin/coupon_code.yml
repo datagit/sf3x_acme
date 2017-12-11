@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        CouponCode:
+            #disabled_actions: ['delete', 'edit', 'restock']
+            class: Mcc\DataSourceBundle\Entity\CouponCode
+            list:
+                fields:
+                    ['id', 'code', 'discount', 'expired', 'createdAt', 'updatedAt']
+            form:
+                fields:
+                    - { property: 'code' }
+                    - { property: 'discount' }
+                    - { property: 'expired' }
+                    #- { property: 'createdAt', type_options: { widget: 'single_text' } }
+                    - { property: 'createdAt' }
+                    - { property: 'updatedAt' }

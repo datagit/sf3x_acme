@@ -6,9 +6,11 @@ easy_admin:
         menu:
             - { entity: 'Category', icon: 'tag' }
             - { entity: 'Product', icon: 'recycle' }
+            - { entity: 'CouponCode', icon: 'gears' }
             - { entity: 'Color', icon: 'gears' }
             - { entity: 'Size', icon: 'gears' }
             - { entity: 'Tag', icon: 'tag' }
             - { entity: 'Post', icon: 'file' }
+            - { entity: 'Comment', icon: 'vcard-o' }
             - { entity: 'User', label: 'User Account', icon: 'user' }
         # ...

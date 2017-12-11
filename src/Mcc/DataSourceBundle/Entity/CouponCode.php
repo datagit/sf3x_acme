@@ -24,9 +24,9 @@ class CouponCode
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @ORM\Column(name="code", type="string", length=255, unique=true)
      */
-    private $name;
+    private $code;
 
     /**
      * @var int
@@ -68,27 +68,19 @@ class CouponCode
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return CouponCode
+     * @return string
      */
-    public function setName($name)
+    public function getCode()
     {
-        $this->name = $name;
-
-        return $this;
+        return $this->code;
     }
 
     /**
-     * Get name
-     *
-     * @return string
+     * @param string $code
      */
-    public function getName()
+    public function setCode($code)
     {
-        return $this->name;
+        $this->code = $code;
     }
 
     /**
@@ -186,5 +178,12 @@ class CouponCode
     {
         return $this->updatedAt;
     }
+
+    function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->code;
+    }
+
 }
 
