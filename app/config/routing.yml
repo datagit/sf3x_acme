@@ -1,3 +1,13 @@
+mcc_demo:
+    resource: "@MccDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+mcc_api:
+    resource: "@MccApiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 mcc_frontend:
     resource: "@MccFrontendBundle/Controller/"
     type:     annotation
@@ -26,3 +36,8 @@ easy_admin_bundle:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+# for Rest API DOC
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

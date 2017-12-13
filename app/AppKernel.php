@@ -25,6 +25,12 @@ class AppKernel extends Kernel
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Mcc\FrontendBundle\MccFrontendBundle(),
+            new FOS\RestBundle\FOSRestBundle(), //for Rest API
+            new JMS\SerializerBundle\JMSSerializerBundle(), //for Rest API
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(), //for Rest API DOC
+            new EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(),
+            new Mcc\ApiBundle\MccApiBundle(),
+            new Mcc\DemoBundle\MccDemoBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -46,3 +46,12 @@ A Symfony project created on November 29, 2017, 11:47 pm.
 12. install $composer require --dev doctrine/doctrine-fixtures-bundle
     https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html
     https://stackoverflow.com/questions/47613979/symfony-3-4-0-could-not-find-any-fixture-services-to-load
+13. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require friendsofsymfony/rest-bundle
+    http://symfony.com/doc/master/bundles/FOSRestBundle/index.html
+14. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require jms/serializer-bundle
+    http://jmsyst.com/bundles/JMSSerializerBundle
+15. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require nelmio/api-doc-bundle
+    https://symfony.com/doc/master/bundles/NelmioApiDocBundle/index.html
+16. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require eightpoints/guzzle-bundle
+    http://knpbundles.com/8p/GuzzleBundle
+

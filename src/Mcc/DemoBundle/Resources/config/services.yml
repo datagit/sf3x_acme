@@ -1,0 +1,4 @@
+services:
+#    mcc_demo.example:
+#        class: Mcc\DemoBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -7,6 +7,8 @@ imports:
     - { resource: easyadmin/ }
     - { resource: doctrine_extensions.yml }
     - { resource: "@MccFrontendBundle/Resources/config/services.yml" }
+    - { resource: "@MccApiBundle/Resources/config/services.yml" }
+    - { resource: "@MccDemoBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -143,3 +145,5 @@ stof_doctrine_extensions:
 #    mongodb:
 #        default: ~
 
+# for Rest API DOC
+nelmio_api_doc: ~

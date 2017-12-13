@@ -18,5 +18,5 @@ parameters:
     mailer_password: ~
 
     # A secret key that's used to generate certain security-related tokens
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: NFKByGAGg3yO0zlVWZwl9XjqJXy3dbFs
     app.path.product_images: /uploads/images/products
