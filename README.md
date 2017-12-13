@@ -54,4 +54,6 @@ A Symfony project created on November 29, 2017, 11:47 pm.
     https://symfony.com/doc/master/bundles/NelmioApiDocBundle/index.html
 16. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require eightpoints/guzzle-bundle
     http://knpbundles.com/8p/GuzzleBundle
+17. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require voryx/restgeneratorbundle dev-master
+    https://github.com/voryx/restgeneratorbundle
 
