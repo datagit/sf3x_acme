@@ -45,5 +45,9 @@ app:
 # for Rest API DOC
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
-#    resource: "@MccDataSourceBundle/Controller/"
     prefix:   /api/doc
+
+app.swagger:
+    path: /api/doc.json
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger }
