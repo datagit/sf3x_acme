@@ -1,3 +1,8 @@
+mcc_data_source_post_api:
+    resource: "@MccDataSourceBundle/Controller/PostRESTController.php"
+    type:   rest
+    prefix:   /api
+
 mcc_demo:
     resource: "@MccDemoBundle/Controller/"
     type:     annotation
@@ -39,5 +44,6 @@ app:
 
 # for Rest API DOC
 NelmioApiDocBundle:
-    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
+#    resource: "@MccDataSourceBundle/Controller/"
     prefix:   /api/doc

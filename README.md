@@ -56,4 +56,6 @@ A Symfony project created on November 29, 2017, 11:47 pm.
     http://knpbundles.com/8p/GuzzleBundle
 17. install $php -dmemory_limit=1G /usr/local//bin/composer.phar require voryx/restgeneratorbundle dev-master
     https://github.com/voryx/restgeneratorbundle
+    usage: $php bin/console voryx:generate:rest --entity="MccDataSourceBundle:Post" --document --overwrite
+    
 

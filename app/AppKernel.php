@@ -28,9 +28,11 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(), //for Rest API
             new JMS\SerializerBundle\JMSSerializerBundle(), //for Rest API
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(), //for Rest API DOC
-            new EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(),
+            new EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(), // for call API
+            new Voryx\RESTGeneratorBundle\VoryxRESTGeneratorBundle(), // for generator CURD API
             new Mcc\ApiBundle\MccApiBundle(),
             new Mcc\DemoBundle\MccDemoBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
