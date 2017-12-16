@@ -25,7 +25,7 @@ easy_admin:
                     - { property: 'name'}
                     - { property: 'slug'}
                     - { property: 'price' }
-                    - { property: 'description'}
+                    - { property: 'description', type: 'raw'}
                     - { property: 'enabled'}
                     - { property: 'image', type: 'image', base_path: '%app.path.product_images%', template: 'vich_uploader_image.html.twig' }
                     #- { property: 'image', type: 'vich_file', base_path: '%app.path.product_images%' }

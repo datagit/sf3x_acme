@@ -4,6 +4,7 @@ easy_admin:
         #brand_color: '#3B5998'
         form_theme:   ['VichUploaderBundle:Form:fields.html.twig', 'horizontal']
         menu:
+            - { label: 'Reporting', route: 'easyadmin_abc' , icon: 'recycle' }
             - { entity: 'Category', icon: 'tag' }
             - { entity: 'Product', icon: 'recycle' }
             - { entity: 'CouponCode', icon: 'gears' }
