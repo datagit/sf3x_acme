@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Mcc\ApiBundle\MccApiBundle(),
             new Mcc\DemoBundle\MccDemoBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

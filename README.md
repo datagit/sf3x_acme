@@ -61,5 +61,6 @@ A Symfony project created on November 29, 2017, 11:47 pm.
 19. install Postman Interceptor
 20. post api by Postman with Interceptor
     https://www.getpostman.com/
-    
+21. install ob/highcharts-bundle
+    https://github.com/marcaube/ObHighchartsBundle/blob/master/Resources/doc/installation.md
 

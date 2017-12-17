@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class DefaultController extends Controller
 {
     /**
@@ -76,4 +77,5 @@ class DefaultController extends Controller
 
         return $this->render('MccDemoBundle:Default:index.html.twig', array('form' => $form->createView()));
     }
+
 }
