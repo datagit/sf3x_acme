@@ -33,6 +33,7 @@ class PostType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'Mcc\DataSourceBundle\Entity\Post',
+            //'csrf_protection'   => false,
         ));
     }
 

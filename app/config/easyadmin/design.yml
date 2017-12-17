@@ -4,14 +4,23 @@ easy_admin:
         #brand_color: '#3B5998'
         form_theme:   ['VichUploaderBundle:Form:fields.html.twig', 'horizontal']
         menu:
-            - { label: 'Reporting', route: 'easyadmin_abc' , icon: 'recycle' }
-            - { entity: 'Category', icon: 'tag' }
-            - { entity: 'Product', icon: 'recycle' }
-            - { entity: 'CouponCode', icon: 'gears' }
-            - { entity: 'Color', icon: 'gears' }
-            - { entity: 'Size', icon: 'gears' }
-            - { entity: 'Tag', icon: 'tag' }
-            - { entity: 'Post', icon: 'file' }
-            - { entity: 'Comment', icon: 'vcard-o' }
+            - { label: 'Dashboard', route: 'easyadmin_abc' , icon: 'dashboard' }
+            - { label: 'Reporting', route: 'easyadmin_abc' , icon: 'bar-chart' }
+            - { label: 'Shopping', route: 'easyadmin_abc' , icon: 'shopping-cart' }
+            - { label: 'Gallery', route: 'easyadmin_abc' , icon: 'photo' }
+            - label: 'Product'
+              icon: 'cubes'
+              children:
+                - { entity: 'Category', icon: 'tag' }
+                - { label: 'Product', entity: Product, icon: 'cubes'}
+                - { label: 'Coupon Code', entity: CouponCode, icon: 'bitcoin'}
+                - { entity: 'Color', icon: 'cogs' }
+                - { entity: 'Size', icon: 'cogs' }
+            - label: 'Post'
+              icon: 'file'
+              children:
+                - { entity: 'Tag', icon: 'tag' }
+                - { entity: 'Post', icon: 'file' }
+                - { entity: 'Comment', icon: 'vcard-o' }
             - { entity: 'User', label: 'User Account', icon: 'user' }
         # ...
