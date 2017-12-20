@@ -21,7 +21,8 @@ easy_admin:
             list:
                 fields:
                     - { property: 'code'}
-                    - { property: 'categories'}
+                    - { property: 'categoriesName', label: "Categories" }
+                    #- { property: 'categories'}
                     - { property: 'name'}
                     - { property: 'slug'}
                     - { property: 'price' }

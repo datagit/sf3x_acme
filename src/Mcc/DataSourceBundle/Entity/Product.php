@@ -442,7 +442,15 @@ class Product
         $this->position = $position;
     }
 
-
+    public function categoriesName() {
+        $labels = null;
+        if (! empty($this->categories)) {
+            foreach ($this->categories as $value) {
+                $labels .= printf("%s, ", $value);
+            }
+        }
+        return $labels;
+    }
 
 }
 

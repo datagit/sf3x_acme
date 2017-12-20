@@ -63,4 +63,6 @@ A Symfony project created on November 29, 2017, 11:47 pm.
     https://www.getpostman.com/
 21. install ob/highcharts-bundle
     https://github.com/marcaube/ObHighchartsBundle/blob/master/Resources/doc/installation.md
+22. install https://packagist.org/packages/geekyhouse/external-tracking-bundle
+
 
