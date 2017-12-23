@@ -113,21 +113,17 @@ vich_uploader:
             upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
 
 ivory_ck_editor:
+    #autoload: false
     input_sync: true
-    default_config: base_config
+    default_config: standard_config
     configs:
-        base_config:
-            toolbar:
-                #- { name: "styles", items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
-    configs:
-        simple_config:
-            toolbar:
-                # ...
-        advanced_config:
-            toolbar:
-                - { name: "styles", items: ['Bold', 'Italic', 'BulletedList', 'Link'] }
-                # ...
-#
+        basic_config:
+            toolbar: basic
+        standard_config:
+            toolbar: standard
+        full_config:
+            toolbar: full
+
 stof_doctrine_extensions:
     default_locale: en_US
 

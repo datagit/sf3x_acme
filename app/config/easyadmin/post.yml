@@ -5,8 +5,8 @@ easy_admin:
             form:
                 fields:
                     - { property: 'name'}
-                    - { property: 'brief'}
-                    - { property: 'description', type: 'ckeditor'}
+                    - { property: 'brief', type: 'ckeditor', type_options: { 'config_name': 'basic_config'}}
+                    - { property: 'description', type: 'ckeditor', type_options: { 'config_name': 'standard_config'}}
                     - { property: 'author'}
                     - { property: 'position'}
                     - { property: 'enabled'}
