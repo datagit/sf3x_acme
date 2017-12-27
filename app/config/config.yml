@@ -170,10 +170,6 @@ sensio_framework_extra:
     view:    { annotations: false }
     router:  { annotations: true }
 
-tweede_golf_media:
-    max_per_page: 24  # this is optional (default is 18)
-    file_entity: 'MccDataSourceBundle:File'  # this is required
-
 #st ------------------
 stof_doctrine_extensions:
     orm:
