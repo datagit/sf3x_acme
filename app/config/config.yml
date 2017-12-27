@@ -111,6 +111,9 @@ vich_uploader:
         product_images:
             uri_prefix:         '%app.path.product_images%'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+        media_mapping:
+            uri_prefix:         '%app.path.media%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/media'
 
 ivory_ck_editor:
     #autoload: false
@@ -193,3 +196,37 @@ liip_imagine:
             quality: 80
             filters:
                 thumbnail: { size: [200, 150], mode: outbound }
+
+eight_points_guzzle:
+    # (de)activate logging/profiler; default: %kernel.debug%
+    logging: true
+
+    clients:
+        api_payment:
+            base_url: "http://api.domain.tld"
+
+            # guzzle client options (full description here: https://guzzle.readthedocs.org/en/latest/request-options.html)
+            # NOTE: "headers" option is not accepted here as it is provided as described above.
+            options:
+                auth:
+                    - acme     # login
+                    - pa55w0rd # password
+
+                headers:
+                    Accept: "application/json"
+
+                # Find proper php const, for example CURLOPT_SSLVERSION, remove CURLOPT_ and transform to lower case.
+                # List of curl options: http://php.net/manual/en/function.curl-setopt.php
+                curl:
+                    sslversion: 1 # or !php/const:CURL_HTTP_VERSION_1_0 for symfony >= 3.2
+
+                timeout: 30
+
+            # plugin settings
+            plugin: ~
+
+        api_crm:
+            base_url: "http://api.crm.tld"
+            options:
+                headers:
+                    Accept: "application/json"

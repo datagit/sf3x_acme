@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        Media:
+            class: Mcc\DataSourceBundle\Entity\Media
+            form:
+                fields:
+                    - { property: 'mediaFile', type: 'vich_file'}
+            # ...
