@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        File:
+            class: Mcc\DataSourceBundle\Entity\File
+#            form:
+#                fields:
+#                    - { property: 'file', type: 'VichFileType'}
+            # ...

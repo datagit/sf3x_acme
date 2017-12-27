@@ -7,7 +7,7 @@ easy_admin:
             - { label: 'Dashboard', route: 'easyadmin_abc' , icon: 'dashboard' }
             - { label: 'Reporting', route: 'easyadmin_abc' , icon: 'bar-chart' }
             - { label: 'Shopping', route: 'easyadmin_abc' , icon: 'shopping-cart' }
-            - { label: 'Gallery', route: 'easyadmin_abc' , icon: 'photo' }
+            - { label: 'Media', entity: 'File' , icon: 'photo' }
             - label: 'Product'
               icon: 'cubes'
               children:

@@ -64,5 +64,8 @@ A Symfony project created on November 29, 2017, 11:47 pm.
 21. install ob/highcharts-bundle
     https://github.com/marcaube/ObHighchartsBundle/blob/master/Resources/doc/installation.md
 22. install https://packagist.org/packages/geekyhouse/external-tracking-bundle
-
-
+23. install http://symfony.com/doc/master/bundles/LiipImagineBundle/index.html
+24. https://github.com/liip/LiipImagineBundle
+    https://github.com/KnpLabs/KnpGaufretteBundle
+        php bin/console assets:install public --symlink
+    

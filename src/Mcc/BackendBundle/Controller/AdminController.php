@@ -83,4 +83,12 @@ class AdminController extends BaseAdminController
         ));
     }
 
+    /** @Route("/media", name="easyadmin_media") */
+    public function mediaAction()
+    {
+
+        return $this->render('MccBackendBundle:Default:media.html.twig', array(
+        ));
+    }
+
 }

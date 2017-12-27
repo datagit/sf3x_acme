@@ -1,0 +1,20 @@
+{
+  "name": "bower_public",
+  "homepage": "https://github.com/datagit/sf3x_acme",
+  "authors": [
+    "DatDao <datdao.dev@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tweedegolf-media-browser": "^0.1.3"
+  }
+}

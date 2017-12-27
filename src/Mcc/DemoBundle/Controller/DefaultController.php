@@ -2,7 +2,9 @@
 
 namespace Mcc\DemoBundle\Controller;
 
+use Mcc\DataSourceBundle\Entity\File;
 use Mcc\DataSourceBundle\Entity\Post;
+use Mcc\DataSourceBundle\Form\FileType;
 use Mcc\DataSourceBundle\Form\PostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -58,14 +60,16 @@ class DefaultController extends Controller
     public function formAction(Request $request)
     {
 
-        $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
+        $file = new File();
+        $form = $this->createForm(FileType::class, $file);
+
+
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
+            $em->persist($file);
             $em->flush();
 
 //            return $this->redirectToRoute('admin_post_show', [

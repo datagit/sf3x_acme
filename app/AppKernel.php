@@ -34,6 +34,8 @@ class AppKernel extends Kernel
             new Mcc\DemoBundle\MccDemoBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new Ob\HighchartsBundle\ObHighchartsBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
