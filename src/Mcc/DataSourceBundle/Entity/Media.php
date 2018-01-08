@@ -28,6 +28,11 @@ class Media extends BaseFile
     private $id;
 
     /**
+     * @ORM\Column(name="tag", type="string", length=128, nullable=true, unique=true)
+     */
+    private  $tag;
+
+    /**
      * @Vich\UploadableField(mapping="media_mapping", fileNameProperty="name")
      * @var File
      */
@@ -79,6 +84,10 @@ class Media extends BaseFile
             $this->updatedAt = new \DateTime('now');
 
             $this->setOriginalName($mediaFile->getFilename());
+            $this->setMimeType($mediaFile->getMimeType());
+            //$nameEncrypt = sprintf("%s.%s", md5($mediaFile->getFilename()), $mediaFile->getExtension());
+            //$this->setName($nameEncrypt);
+            $this->setSize($mediaFile->getSize());
         }
     }
 
@@ -114,7 +123,21 @@ class Media extends BaseFile
         $this->updatedAt = $updatedAt;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTag()
+    {
+        return $this->tag;
+    }
 
+    /**
+     * @param mixed $tag
+     */
+    public function setTag($tag)
+    {
+        $this->tag = $tag;
+    }
 
 }
 

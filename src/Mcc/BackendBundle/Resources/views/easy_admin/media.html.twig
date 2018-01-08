@@ -1,0 +1,5 @@
+{% if value|preg_match('/\.(gif|jpg|jpeg|tiff|png)$/i') %}
+    {% include '@MccBackend/easy_admin/vich_uploader_image.html.twig' %}
+{% else %}
+    {% include '@MccBackend/easy_admin/file.html.twig' %}
+{% endif %}

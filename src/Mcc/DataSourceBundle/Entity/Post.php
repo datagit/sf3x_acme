@@ -40,7 +40,7 @@ class Post
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="media_mapping", fileNameProperty="image")
      * @var File
      */
     private $imageFile;

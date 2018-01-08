@@ -4,5 +4,14 @@ easy_admin:
             class: Mcc\DataSourceBundle\Entity\Media
             form:
                 fields:
+                    - { property: 'tag'}
                     - { property: 'mediaFile', type: 'vich_file'}
-            # ...
+            list:
+                fields:
+                    - { property: 'tag'}
+                    - { property: 'updatedAt'}
+                    - { property: 'createdAt'}
+                    - { property: 'originalName' }
+                    - { property: 'size'}
+                    - { property: 'mimeType'}
+                    - { property: 'name', type: 'image', base_path: '%app.path.media%', template: '@MccBackend/easy_admin/media.html.twig' }

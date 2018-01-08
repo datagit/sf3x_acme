@@ -10,7 +10,7 @@ easy_admin:
                     - { property: 'price', type_options: { trim: true }, type: 'money', type_options: { currency: 'EUR' } }
                     - { property: 'description', type: 'ckeditor', type_options: { 'config_name': 'standard_config'}}
                     - { property: 'enabled'}
-                    - { property: 'imageFile', type: 'vich_file' }
+                    - { property: 'imageFile', type: 'vich_image' }
                     - { property: 'categories', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Category', attr: { data-widget: 'select2' } } }
                     - { property: 'colors', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Color', attr: { data-widget: 'select2' } } }
                     - { property: 'sizes', type: 'entity', type_options: { multiple: true, class: 'Mcc\DataSourceBundle\Entity\Size', attr: { data-widget: 'select2' } } }
@@ -29,6 +29,6 @@ easy_admin:
                     - { property: 'price' }
                     - { property: 'description', type: 'raw'}
                     - { property: 'enabled'}
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%', template: 'vich_uploader_image.html.twig' }
-                    #- { property: 'image', type: 'vich_file', base_path: '%app.path.product_images%' }
-                    #- { property: 'image', type: 'file', base_path: '%app.path.product_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.media%' }
+                    #- { property: 'image', type: 'vich_file', base_path: '%app.path.media%' }
+                    #- { property: 'image', type: 'file', base_path: '%app.path.media%' }

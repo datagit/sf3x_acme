@@ -26,6 +26,6 @@ easy_admin:
                     - { property: 'enabled'}
                     - { property: 'createdAt'}
                     - { property: 'updatedAt'}
-                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%', template: 'vich_uploader_image.html.twig' }
-                    #- { property: 'image', type: 'vich_file', base_path: '%app.path.product_images%' }
-                    #- { property: 'image', type: 'file', base_path: '%app.path.product_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.media%', template: 'vich_uploader_image.html.twig' }
+                    #- { property: 'image', type: 'vich_file', base_path: '%app.path.media%' }
+                    #- { property: 'image', type: 'file', base_path: '%app.path.media%' }

@@ -108,12 +108,10 @@ fos_user:
 vich_uploader:
     db_driver: orm
     mappings:
-        product_images:
-            uri_prefix:         '%app.path.product_images%'
-            upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
         media_mapping:
             uri_prefix:         '%app.path.media%'
             upload_destination: '%kernel.root_dir%/../web/uploads/media'
+            namer: vich_uploader.namer_uniqid
 
 ivory_ck_editor:
     #autoload: false
